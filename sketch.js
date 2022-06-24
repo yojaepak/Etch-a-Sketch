@@ -3,7 +3,11 @@ let gridSize = 16;
 
 const container = document.querySelector('#container');
 
-for (let i = 0; i < gridSize; i++) {
+for (let i = 0; i < (gridSize * gridSize); i++) {
     let grid = document.createElement('div');
+    grid.id = "box";
+    grid.textContent = "box";
     container.appendChild(grid);
 }
+
+container.style.gridTemplateColumns = `repeat(${gridSize},1fr)`;
