@@ -17,8 +17,9 @@ function setGrid(gridSize) {
 
         container.appendChild(grid);
     }
-    container.style.gridTemplateColumns = `repeat(${gridSize}, 25px)`;
-
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    
     const boxes = document.querySelectorAll('#box');
 
     boxes.forEach((grid) =>  {
@@ -28,8 +29,7 @@ function setGrid(gridSize) {
     });
 }
 
-
-
+setGrid(gridSize);
 
 const button = document.querySelector('button');
 
