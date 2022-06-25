@@ -19,12 +19,17 @@ function setGrid(gridSize) {
     }
     container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-    
+
     const boxes = document.querySelectorAll('#box');
 
     boxes.forEach((grid) =>  {
         grid.addEventListener('mouseover', function(event) {
-            event.target.style.backgroundColor = "red";
+            const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+            const r = randomBetween(0, 255);
+            const g = randomBetween(0, 255);
+            const b = randomBetween(0, 255);
+            const rgb = `rgb(${r},${g},${b})`; 
+            event.target.style.backgroundColor = `${rgb}`;
         });
     });
 }
