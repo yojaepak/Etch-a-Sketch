@@ -24,12 +24,10 @@ function setGrid(gridSize) {
 
     boxes.forEach((grid) =>  {
         grid.addEventListener('mouseover', function(event) {
-            const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-            const r = randomBetween(0, 255);
-            const g = randomBetween(0, 255);
-            const b = randomBetween(0, 255);
-            const rgb = `rgb(${r},${g},${b})`; 
-            event.target.style.backgroundColor = `${rgb}`;
+            const r = Math.floor(Math.random() * 256) + 1;
+            const g = Math.floor(Math.random() * 256) + 1;
+            const b = Math.floor(Math.random() * 256) + 1;
+            event.target.style.backgroundColor = `rgb(${r},${g},${b})`;
         });
     });
 }
