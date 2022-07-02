@@ -12,7 +12,7 @@ function setGrid(gridSize) {
         let grid = document.createElement('div');
         grid.id = "box";
         grid.style.border = "solid";
-        grid.style.borderColor = "blue";
+        grid.style.borderWidth = "0";
         
 
         container.appendChild(grid);
