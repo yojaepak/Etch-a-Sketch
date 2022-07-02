@@ -34,12 +34,23 @@ function setGrid(gridSize) {
 
 setGrid(gridSize);
 
-const button = document.querySelector('button');
-
+const button = document.querySelector('.btn');
+let newSize;
 button.addEventListener('click', function(event) {
-    let newSize = prompt("Please enter a new grid size between 0 and 100.");
+    newSize = prompt("Please enter a new grid size between 0 and 100.");
     while (newSize < 0 || newSize > 100) {
         newSize = prompt("Number is out of bounds, please enter a number between 0 and 100.");
     }
     setGrid(newSize);
+});
+
+const clear = document.querySelector('.clear');
+
+clear.addEventListener('click', function(event) {
+    if (newSize == undefined) {
+        setGrid(gridSize);
+    }
+    else {
+        setGrid(newSize);
+    }
 });
